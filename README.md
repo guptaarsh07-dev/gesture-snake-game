@@ -4,10 +4,16 @@ A modern take on the classic Nokia Snake game — but controlled entirely throug
 The snake responds to swipe gestures for movement and pinch gestures for speed boosts. The game is built using **Pygame**, **OpenCV**, and **MediaPipe**.
 
 ---
+# Gesture-Controlled Nokia Snake Game
+
+A modern take on the classic Nokia Snake game — but controlled entirely through **hand gestures** using your webcam.  
+The snake responds to swipe gestures for movement and pinch gestures for speed boosts. The game is built using **Pygame**, **OpenCV**, and **MediaPipe**.
+
+---
 
 ## 🎮 Features
 
-- **Gesture-based controls**  
+- **Gesture-based controls**
   - Swipe **Up / Down / Left / Right** to move the snake  
   - **Pinch** (thumb + index) to activate a speed boost  
 - **Retro Nokia-style visuals**
@@ -38,7 +44,7 @@ Copy code
 
 Install dependencies manually:
 
-bash
+```bash
 pip install pygame mediapipe opencv-python numpy
 Or run the included setup script:
 
@@ -46,15 +52,14 @@ bash
 Copy code
 python setup.py
 Ensure your system has a functioning webcam.
-
+```
 ▶️ Running the Game
 Run the main script:
 
-bash
+css
 Copy code
 python main.py
 Two windows will appear:
-
 
 Snake Game – the playable Pygame window
 
@@ -64,61 +69,58 @@ Press ESC to quit the game window.
 Press Q inside the webcam preview window to exit gesture view.
 
 ✋ Gesture Controls
-Swipe Left/Right/Up/Down
-→ Move the snake
+Swipe Left/Right/Up/Down → Move the snake
 
-Pinch Gesture (thumb touching index)
-→ Speed boost activated
+Pinch gesture → Speed boost
 
-Show UP gesture when dead
-→ Restart game
+UP gesture on Game Over → Restart
 
-ESC Key
-→ Quit the game
+ESC → Quit game
 
 🧩 How It Works
-1. Gesture Detection
-gesture_controller.py uses MediaPipe Hand Landmarks to detect wrist movement and finger distance, determining direction and pinch status.
+Gesture Detection
+gesture_controller.py tracks hand landmarks and detects:
 
-2. Game Logic
-snake_game.py maintains:
+wrist movement for direction
 
-Snake position
+pinch distance for boost
 
-Fruit spawning
+Game Logic
+snake_game.py handles:
 
-Collision detection
+snake movement
 
-Score tracking
+fruit spawning
 
-Speed boost logic
+collisions
 
-Rendering & particle effects
+particle effects
 
-3. Integration
-main.py links gesture input to snake movement, manages threaded gesture detection, updates the game, and renders both windows.
+game restart state
+
+Integration
+main.py connects gesture input to game actions and manages both windows.
 
 🐞 Troubleshooting
 Gesture not detected?
 Improve lighting or adjust camera angle.
 
 Laggy performance?
-Reduce particle effects in snake_game.py.
+Reduce particle settings in snake_game.py.
 
 Webcam not opening?
-Ensure no other application is using the camera, or change the camera index in main.py.
+Ensure no other app is using the camera or change camera index in main.py.
 
 🚀 Future Improvements
-Add keyboard fallback controls
+Keyboard fallback controls
 
-Add settings panel (gesture threshold, sensitivity, grid size)
+Adjustable gesture sensitivity
 
-Add sound effects
+Better smoothing for gesture detection
 
-Create an executable release
+Executable release
 
-Improve gesture accuracy with smoothing filters
+Sound effects
 
 ⚠️ Note
 Some changes are required and pending for the project's improvement.
-
